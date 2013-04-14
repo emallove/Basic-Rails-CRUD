@@ -38,4 +38,16 @@ gem 'therubyracer'
 gem 'nokogiri'  
 
 # http://stackoverflow.com/questions/8366937/difference-between-gem-and-require-require-open-uri
-# gem 'open-uri'  
+# gem 'open-uri'
+#
+
+
+# http://cretaceouslabs.com/blog/2010/10/rails-3-console-file-load/
+# ~/.irbrc
+require 'rubygems'
+require 'ap'
+
+## ~/src/rails_3_app/Gemfile
+group :development do
+  gem 'awesome_print'
+end
