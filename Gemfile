@@ -34,3 +34,8 @@ gem 'therubyracer'
 # To use debugger
 # gem 'ruby-debug'
 
+# gem 'rubygems'  
+gem 'nokogiri'  
+
+# http://stackoverflow.com/questions/8366937/difference-between-gem-and-require-require-open-uri
+# gem 'open-uri'  
