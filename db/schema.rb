@@ -13,17 +13,35 @@
 
 ActiveRecord::Schema.define(:version => 20120203160956) do
 
+  # For now we are leaving the "posts" table as is, though
+  # this table will eventually be renamed to "spins" or something
+  # more sensible
+ 
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.text     "body"
 
-    t.text     "radio_station"
-    t.text     "dj_name"
-    t.text     "radio_station_url"
+    # Track attributes
+    t.text "album"
+    t.text "artist"
+    t.text "release_date"
+    t.text "notes"
 
+    # Spin attributes
+    t.text "radio_station"
+    t.text "dj_name"
     t.datetime "spun_at"
 
+    # Radio station attributes
+    t.text "radio_station_url"
+    t.text "music_director"
+
+    # DJ attributes
+
+    # Show attributes
+
+
+    # Active record attributes
     t.datetime "created_at"
     t.datetime "updated_at"
   end
