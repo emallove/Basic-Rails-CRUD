@@ -16,6 +16,14 @@ ActiveRecord::Schema.define(:version => 20120203160956) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
+    t.text     "body"
+
+    t.text     "radio_station"
+    t.text     "dj_name"
+    t.text     "radio_station_url"
+
+    t.datetime "spun_at"
+
     t.datetime "created_at"
     t.datetime "updated_at"
   end
