@@ -11,4 +11,17 @@ namespace :screen do
         puts item.at_css(".prodLink").text  
     end  
   end  
+
+  task :scrape_wmbr_playlist do
+    url = "http://www.track-blaster.com/wmbr/playlist.php?id=13253"  
+    doc = Nokogiri::HTML(open(url))
+
+    doc.xpath('//div[@class="dataRowTime"]')
+
+    # doc.css(".item").each do |item|  
+    #     puts item.at_css(".prodLink").text  
+    # end  
+  end  
 end  
+
+
