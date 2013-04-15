@@ -34,15 +34,22 @@ namespace :screen do
       # "Human After All",
       # "(Virgin, 2006)"]
 
-      spin = Post.new()
+      # spin = Post.new artist: _split_text[2]
+      spin = Post.new
 
-      spin.spun_at = _split_text[1]
-      spin.artist = _split_text[2]
-      spin.song = _split_text[3]
-      spin.album = _split_text[4]
-
-      spin.save!
+      spin.spin_datetime = _split_text[1]
+      spin.track_artist = _split_text[2]
+      spin.track_name = _split_text[3]
+      spin.track_album = _split_text[4]
+      spin.spin_source_url = url
       # spin.comment = _split_text[5]
+
+      # PERFORMANCE HIT - do multiple inserts at a time.  Waaay faster.
+      spin.save!
+
+      # EAM - DEBUGGING
+      # ap spin
+      # break
 
     end
 
