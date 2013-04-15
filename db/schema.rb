@@ -17,29 +17,42 @@ ActiveRecord::Schema.define(:version => 20120203160956) do
   # this table will eventually be renamed to "spins" or something
   # more sensible
  
+  drop_table "posts"
   create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
 
     # Track attributes
-    t.text "album"
-    t.text "artist"
-    t.text "release_date"
-    t.text "notes"
+    # (We could get carried away with these: http://en.wikipedia.org/wiki/ID3)
+    t.text "track_name"
+    t.text "track_album"
+    t.text "track_artist"
+    t.text "track_notes"
+    t.datetime "track_release_date"
+    t.datetime "track_record_label"
 
     # Spin attributes
-    t.text "radio_station"
-    t.text "dj_name"
-    t.datetime "spun_at"
+    t.text "spin_dj_name"
+    t.text "spin_source_url"
+    t.datetime "spin_datetime"
 
     # Radio station attributes
+    t.text "radio_station_name"
     t.text "radio_station_url"
-    t.text "music_director"
+    t.text "radio_station_music_director"
+    t.text "radio_station_call_letters"
+
+    # Enum - { college, commercial, public, private }
+    t.text "radio_station_format"
+    t.text "radio_station_frequency"
+    t.text "radio_station_format"
+    t.text "radio_station_geographic_location"
 
     # DJ attributes
+    t.text "dj_name"
+    t.text "dj_contact_info"
 
-    # Show attributes
-
+    # Radio show attributes
+    t.text "radio_show_name"
+    t.text "radio_schedule"
 
     # Active record attributes
     t.datetime "created_at"
